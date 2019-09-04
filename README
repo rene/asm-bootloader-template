@@ -1,21 +1,21 @@
  Copyright (c) 2019 - Monaco F. J. <monaco@usp.br>
- This is free software and distributed under GNU GPL vr.3.  
- Please refer to the companion file LICENSING or to the 
- online documentation https://www.gnu.org/licenses/gpl-3.0.txt
- for further information.
+ 
+ This is free software and distributed under GNU GPL vr.3. Please refer 
+ to the companion file LICENSING or to the online documentation at
+ https://www.gnu.org/licenses/gpl-3.0.txt for further information.
 
  README (seriously, read me)
  ==============================
 
  These are the directions for your appointment.
 
- YOUR ASSIGNMENT
- ---------------
+ ASSIGNMENT DIRECTIONS
+ ---------------------
 
  Provided template source file 'mbr.asm' prints the beloved "Hello World!"
  greetings on the screen. Edit this file and make something cool with it.
 
- If you happen to be short of ideias, perhaps you may consider things like
+ If you happen to be short of ideas, perhaps you may consider things like
  a command interpreter, a small game, a text-mode animation, a hardware
  configuration checker... or anything fun.
 
@@ -35,17 +35,6 @@
  RAM (e.g. by using BIOS interruptions); you may resort to if you want to do
  make a program exceeding the 512 MBR limit (and remember to add the files
  you eventually create to the VCS project repository.)
-
- HOW TO DELIVER
- --------------
-
- After finishing your work, make sure you have committed the latest version
- of your working example and pushed it to the main repository. The release
- should be in your master branch. Add a tag to it: 'release-01'.
-
- It's a good idea to clone your repository in a different directory, build
- and test your project to verify that everything is ok before making the
- final release.
 
  WHAT YOU NEED
  -------------
@@ -92,6 +81,41 @@
  If you have problems booting your iso image through your USB stick, check
  your BIOS configuration settings, specially boot options. You may need to
  enable legacy BIOS support, or to disable security boot features. 
+
+ HOW TO DELIVER
+ --------------
+
+ * Preparation
+
+ Before anything else, add the following statement right at the top of your
+ source files:
+
+	;; Copyright (c) <Year> - <Name> <e-mail>
+	;;
+	;; This is free software and distributed under GNU GPL vr.3. Please 
+	;; refer to the companion file LICENSING or to the online documentation
+	;; at https://www.gnu.org/licenses/gpl-3.0.txt for further information.
+
+ replacing <Year> and <Name> and <e-mail> with your data. It's important to do
+ it before publishing your work online.
+
+ Edit README, replacing these very instructions with your project's
+ documentation (you are welcome to mention that this is a programming exercise
+ and refer to the template repository).
+
+ Also, edit file AUTHORS
+
+ * Delivering
+
+ After finishing your work, make sure you have committed the latest version
+ of your working example and pushed it to the main repository. The release
+ should be in your master branch. Add a tag to it: 'release-01'.
+
+ It's a good idea to clone your repository in a different directory, build
+ and test your project to verify that everything is ok before making the
+ final release.
+
+
 
  LEARNING MATERIAL
  ------------------
