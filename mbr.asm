@@ -4,6 +4,7 @@
 	;; of source code realm, we hereby humbly offer our sacred 
 	;; "Hello World" sacrifice. May our code remain bugless.
 
+	
 	org 0x7c00		; Our load address
 
 	mov ah, 0xe		; Configure BIOS teletype mode
