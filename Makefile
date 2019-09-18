@@ -26,7 +26,7 @@ all: $(MBR)
 test: $(MBR)
 	qemu-system-i386 -drive format=raw,file=$(MBR) -net none
 
-# Create bootable USP stick
+# Create bootable USB stick
 
 iso: $(ISO)
 
