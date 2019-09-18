@@ -7,6 +7,21 @@
 	
 	org 0x7c00		; Our load address
 
+	
+	;; Setup correct values to segment registers after loading.
+	;; 
+	;; This is necessary because some 'bugged' BIOS leave us at
+	;; 0x7C00:0x0000, not in 0x0000:0x7C00, that is the same place,
+	;; but with offset 0. Without this, your usb stick may not boot.
+ 
+	xor ax, ax
+	mov ds, ax
+	mov es, ax
+	mov fs, ax
+	mov gs, ax
+	jmp init
+
+init:	
 	mov ah, 0xe		; Configure BIOS teletype mode
 
 	mov bx, 0		; May be 0 because org directive.
