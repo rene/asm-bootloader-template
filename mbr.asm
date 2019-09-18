@@ -8,11 +8,7 @@
 	org 0x7c00		; Our load address
 
 	
-	;; Setup correct values to segment registers after loading.
-	;; 
-	;; This is necessary because some 'bugged' BIOS leave us at
-	;; 0x7C00:0x0000, not in 0x0000:0x7C00, that is the same place,
-	;; but with offset 0. Without this, your usb stick may not boot.
+	;; Ensure segment:offset values are ok after program is loaded 
  
 	xor ax, ax
 	mov ds, ax
@@ -87,3 +83,13 @@ here:				; C-like NULL terminated string
 	;;
 	;; The line dw causes the output of the 2-byte pattern for the boot
 	;; signature at the current position (positions 511 and 512).
+	;;
+	;; Tip: the first lines after "org directive" are meant ot
+	;; setup correct values to segment registers after loading.
+	;; This is necessary because some 'bugged' BIOS leave us at
+	;; 0x7C00:0x0000, not in 0x0000:0x7C00, that is the same place,
+	;; but with offset 0. Briefly, we zero the involved segment registers
+	;; and jump to init, which causes its address 0x7c00 to be suitably
+	;; loaded into the segment:offset registers. Without this, your usb
+	;; stick may not boot into your physical computer.
+
